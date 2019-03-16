@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>MIDE</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="css/MIDE.css"/>
+        <link rel="stylesheet" type="text/css" href="css/3rdParty/CodeMirror/codemirror.css"/>
+        <link rel="stylesheet" type="text/css" href="css/3rdParty/CodeMirror/seti.css"/>
+        <script src="js/3rdParty/CodeMirror/codemirror.js"></script>
+        <script src="js/3rdParty/CodeMirror/mumps.js"></script>
+    </head>
+    <body>
+        <textarea id="IDE">main
+    w "HelloWorld"
+    q</textarea>
+    <div id="actionBar">
+        <button>Run</button>
+    </div>
+        <script>
+                var editor = CodeMirror.fromTextArea(document.getElementById("IDE"), {
+                  lineNumbers: true,
+                  mode: "mumps",
+                  theme: "seti"
+                });
+              </script>
+    </body>
+</html>

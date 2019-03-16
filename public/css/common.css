@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat|Open+Sans:400,400i,700|Playfair+Display:700');
+
+:root {
+    --mag: #e63462; 
+    --navy: #333745;
+    --lime: #c7efcf;
+    --orange: #fe5f55;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height:1.2;
+}
+
+#titlebar {
+    position: relative;
+}
+#titlebar > h1 {
+    font-family: 'Nova Flat', cursive;
+    font-size: 2em;
+}
+
+#titlebar > button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+button {
+    font-weight: bold;
+    border: 0px;
+    padding: 1vh 2vw;
+    font-size: 1em;
+}
+
+button.navy {
+    background-color: var(--navy);
+    color: #fff;
+}
+
+button.mag {
+    background-color: var(--mag);
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    padding-bottom: 5vh;
+}
+
+header {
+    padding: 5vh;
+}
+
+section {
+    padding:5vh;
+}
+
+section > h1 {
+    text-align: center;
+}
+
+section.navy {
+    background-color: var(--navy);
+    color: #fff;
+}
+.center {
+    margin: auto;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.fifty {
+    width: 50%;
+}
+
+em {
+    font-weight: 700;
+    display: block;
+    padding-bottom: 2vh;
+}

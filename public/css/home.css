@@ -1,0 +1,14 @@
+header {
+    background: url(../img/doc.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 60vw auto;
+}
+header .content {
+    padding: 5vh 0px;
+    width: 40vw;
+}
+
+p {
+    padding-bottom: 5vh;
+}
