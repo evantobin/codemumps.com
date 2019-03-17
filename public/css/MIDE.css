@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+@import url('colors.css');
+
+body {
+    overflow: hidden;
+ }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height:1.2;
+    font-size: 100%;
+}
+
+#actionBar {
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #151718;
+}
+
+button {
+    border: 0px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 2vh 4vw;
+}
+
+button:hover {
+    filter: brightness(70%);
+}
+
+#run {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.CodeMirror {
+    width:100%;
+    flex:1;
+    border-bottom: 3px solid #c0c0c0 !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#output {
+    background-color:#5c5c5c;
+    color: #fff;
+    font-size: .75rem;
+    overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    height: 20vh;
+}
+
+#output .content{
+    padding: 1vw;
+}

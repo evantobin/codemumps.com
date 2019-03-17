@@ -1,26 +1,69 @@
 <html>
-    <head>
-        <title>MIDE</title>
-        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/MIDE.css"/>
-        <link rel="stylesheet" type="text/css" href="css/3rdParty/CodeMirror/codemirror.css"/>
-        <link rel="stylesheet" type="text/css" href="css/3rdParty/CodeMirror/seti.css"/>
-        <script src="js/3rdParty/CodeMirror/codemirror.js"></script>
-        <script src="js/3rdParty/CodeMirror/mumps.js"></script>
-    </head>
-    <body>
-        <textarea id="IDE">main
-    w "HelloWorld"
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIDE</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/MIDE.css" />
+    <link rel="stylesheet" type="text/css" href="css/3rdParty/CodeMirror/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="css/3rdParty/CodeMirror/seti.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/3rdParty/CodeMirror/codemirror.js"></script>
+    <script src="js/3rdParty/CodeMirror/mumps.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/3rdParty/emcellent/emcellent.min.js"></script>
+    <script src="js/3rdParty/jsep.min.js"></script>
+    <script src="js/m2js.js"></script>
+</head>
+
+<body>
+    <textarea id="IDE">main
+    s message="Hello World"
+    w message
+    s $P(message," ")="Goodbye"
+    w message
     q</textarea>
-    <div id="actionBar">
-        <button>Run</button>
+    <div id="output">
+        <div class="content">
+            Output:
+            <ul id="console"></ul>
+        </div>
     </div>
-        <script>
-                var editor = CodeMirror.fromTextArea(document.getElementById("IDE"), {
-                  lineNumbers: true,
-                  mode: "mumps",
-                  theme: "seti"
-                });
-              </script>
-    </body>
+    <div id="actionBar">
+        <button id="run" onclick="runCode()">Run</button>
+    </div>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("IDE"), {
+            lineNumbers: true,
+            mode: "mumps",
+            theme: "seti"
+        });
+        $("#output").resizable({
+            handles: "n",
+            resize: function (event, ui) {
+                ui.position.top = 0;
+                var maxHeight = ui.element.parent().height();
+                maxHeight = maxHeight-(maxHeight*.3);
+                if (ui.size.height >= maxHeight) {
+                    ui.size.height = maxHeight;
+                }
+            }
+        });
+        window.console.log = function() {
+            for (var i=0; i < arguments.length; i++) {
+                document.getElementById("console").innerHTML += "<li>"+arguments[i]+"</li>";
+            }
+        }
+        function runCode() {
+            resetConsole();
+            eval(m2js.convertToJS(editor.getValue()));
+        }
+        function resetConsole() {
+            document.getElementById("console").innerHTML ="";
+        }
+    </script>
+</body>
+
 </html>

@@ -1,26 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Nova+Flat|Open+Sans:400,400i,700|Playfair+Display:700');
-
-:root {
-    --mag: #e63462; 
-    --navy: #333745;
-    --lime: #c7efcf;
-    --orange: #fe5f55;
-}
-
+@import url('colors.css');
 body {
     font-family: 'Open Sans', sans-serif;
-    line-height:1.2;
+    line-height: 1.2;
 }
 
 #titlebar {
     position: relative;
 }
-#titlebar > h1 {
+
+#titlebar>h1 {
     font-family: 'Nova Flat', cursive;
     font-size: 2em;
 }
 
-#titlebar > button {
+#titlebar>button {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -31,6 +25,10 @@ button {
     border: 0px;
     padding: 1vh 2vw;
     font-size: 1em;
+}
+
+button:hover {
+    filter: brightness(70%);
 }
 
 button.navy {
@@ -55,10 +53,10 @@ header {
 }
 
 section {
-    padding:5vh;
+    padding: 5vh;
 }
 
-section > h1 {
+section>h1 {
     text-align: center;
 }
 
@@ -66,6 +64,7 @@ section.navy {
     background-color: var(--navy);
     color: #fff;
 }
+
 .center {
     margin: auto;
 }
@@ -75,11 +74,66 @@ section.navy {
 }
 
 .fifty {
-    width: 50%;
+    flex: .5;
+    padding: 1vw;
+}
+
+.half {
+    width: 60%;
 }
 
 em {
     font-weight: 700;
     display: block;
     padding-bottom: 2vh;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    overflow: auto;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+form a {
+    text-transform: uppercase;
+    color: #585858;
+    font-size: .9em;
+    padding-bottom: 2px;
+    margin-bottom: 3vh;
+    display: block;
+}
+
+form a:hover {
+    color: #000;
+}
+
+form label {
+    text-transform: uppercase;
+    color: #575757;
+    font-size: .75em;
+    padding-bottom: 2px;
+    display: block;
+}
+
+form input, form select {
+    padding: 1vw;
+    margin-bottom: 1.5vh;
+    width: 100%;
+    border: 1px solid #a1a1a1;
+}
+
+form input[type=submit] {
+    background-color: var(--navy);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 200;
 }

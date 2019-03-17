@@ -1,0 +1,36 @@
+html {
+    background-color: var(--navy);
+    font-size: 14px;
+}
+
+#titlebar h1 {
+    color: #fff;
+    padding: 0px;
+}
+
+#window {
+    background: #fff;
+    width: 30%;
+    margin: auto;
+}
+
+section>h1 {
+    text-align: left;
+}
+
+section a {
+    color: #585858;
+    font-size: 1em;
+    padding-bottom: 2px;
+    margin-bottom: 3vh;
+    display: block;
+    text-align: center;
+}
+
+section a:hover {
+    color: #000;
+}
+
+section {
+    padding-bottom:2vh;
+}
