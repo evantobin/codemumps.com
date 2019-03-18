@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>codemumps | Learn to Program Healthcare</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/exercise.css" />
+</head>
+
+<body>
+    <header>
+        <div id="titlebar">
+            <a href="index.html">
+                <h1>codemumps</h1>
+            </a>
+            <a href="login.html"><button class="navy login">Log In</button></a>
+        </div>
+    </header>
+    <section>
+        <div class="flexContainer">
+            <div style="flex:.5;padding-right:5vw;">
+                <h1>Hello World!</h1>
+                <p>M is a procedural programming langauge. That means that programs take the form of a list of
+                    instructions to execute. In general these instructions are executed in order. These instructions are
+                    grouped under tags. By convention, the main entrypoint for a M program (or routine) is the main
+                    tag.<br /><br /></p>
+                <em>Show Carol you know the basics. Execute the program to the right to print out "Hello World"</em>
+            </div>
+            <div class="fifty">
+                <iframe src="mumpsIDE.html" id="mIDE"></iframe>
+            </div>
+        </div>
+    </section>
+    <script>
+        var editor = document.getElementById('mIDE');
+        editor.onload = function () {
+            editor.contentWindow.window.editor.setValue('main\n    w "hello world"\n    q');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+header {
+    background-color: var(--navy);
+    color: #fff;
+}
+section {
+    width: 80%;
+    margin: auto;
+}
+.fifty {
+    padding: 0px;
+}
+iframe {
+    height: 100%;
+    width: 100%;
+    max-height: 60vh;
+}

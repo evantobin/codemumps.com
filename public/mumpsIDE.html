@@ -19,21 +19,17 @@
 </head>
 
 <body>
-    <textarea id="IDE">main
-    s message="Hello World"
-    w message
-    s $P(message," ")="Goodbye"
-    w message
-    q</textarea>
+    <textarea id="IDE"></textarea>
+    <div id="actionBar">
+            <button id="run" onclick="runCode()">Run</button>
+        </div>
     <div id="output">
         <div class="content">
             Output:
             <ul id="console"></ul>
         </div>
     </div>
-    <div id="actionBar">
-        <button id="run" onclick="runCode()">Run</button>
-    </div>
+    
     <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("IDE"), {
             lineNumbers: true,

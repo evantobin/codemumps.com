@@ -3,18 +3,19 @@
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.2;
+    font-size: 14px;
 }
 
 #titlebar {
     position: relative;
 }
 
-#titlebar>h1 {
+#titlebar h1 {
     font-family: 'Nova Flat', cursive;
     font-size: 2em;
 }
 
-#titlebar>button {
+#titlebar .login {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -50,14 +51,16 @@ h1 {
 
 header {
     padding: 5vh;
+    padding-bottom: 0px;
 }
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
 
 section {
     padding: 5vh;
-}
-
-section>h1 {
-    text-align: center;
 }
 
 section.navy {

@@ -18,3 +18,7 @@ iframe {
     height: 200px;
     border-radius: 10px;
 }
+
+section>h1 {
+    text-align: center;
+}

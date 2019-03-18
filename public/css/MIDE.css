@@ -37,7 +37,6 @@ button:hover {
 .CodeMirror {
     width:100%;
     flex:1;
-    border-bottom: 3px solid #c0c0c0 !important;
 }
 
 body {
@@ -52,6 +51,7 @@ body {
     overflow: auto;
     font-family: 'Courier New', Courier, monospace;
     height: 20vh;
+    border-top: 3px solid #c0c0c0 !important;
 }
 
 #output .content{

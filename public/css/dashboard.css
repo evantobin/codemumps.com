@@ -1,0 +1,57 @@
+section>h1 {
+    text-align: left;
+}
+
+section {
+    text-align: left;
+}
+
+#exerciseList {
+    width: 50%;
+    margin: auto;
+}
+
+#exerciseList>p {
+    width: 60%;
+    padding-bottom: 5vh;
+}
+
+section {
+    background-image: url("../img/nurse.png");
+    background-repeat: no-repeat;
+    background-size: 20vw auto;
+}
+
+#exercises li {
+    display: block;
+    height: 100px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+#exercises li.available {
+    background-color: var(--mag)
+}
+
+#exercises li h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25em;
+    padding: 0px;
+}
+
+#exercises li em {
+    font-style: italic;
+    font-size: .75em;
+}
+
+#exercises li p {
+    font-size: .90em;
+    padding-top: 10px;
+}
+
+#exercises li:hover {
+    filter: brightness(105%);
+}
