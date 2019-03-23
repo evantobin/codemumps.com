@@ -305,7 +305,7 @@ m2js.processCMD_q = function (args) {
 }
 
 m2js.processCMD_d = function (args) {
-    args = splitNoParen(args);
+    args = m2js.splitNoParen(args);
     var result = "";
     for (var i = 0; i < args.length; i++) {
         result += m2js.splitMArgs("mumps_" + args[i]) + "();";
