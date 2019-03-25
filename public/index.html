@@ -5,14 +5,16 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/user/loginbutton.js"></script>
 </head>
 
 <body>
     <header>
         <div id="titlebar">
-            <a href="index.html">
-                <h1>codemumps</h1>
-            </a>
+            <h1><a href="index.html">codemumps</a></h1>
             <a href="login.html"><button class="navy login">Log In</button></a>
         </div>
         <div class="content">
@@ -20,7 +22,7 @@
             <p><em>MUMPS code powers hundreds of organization's most powerful and important applications.</em>
                 From a medical emergency to financial transactions, M is the language of choice for performant, highly
                 available systems. Through code challenges you can learn and maintain your M coding skills.</p>
-            <button class="mag">Start Now</button>
+            <a href="register.html"><button class="mag">Start Now</button></a>
         </div>
     </header>
     <section class="navy">
@@ -35,6 +37,17 @@
             </div>
         </div>
     </section>
+    <section class="pbl">
+        <div class="content center">
+            <h1>Problem-based learning</h1>
+
+            <p><em>Learn by doing.</em>
+                By learning by doing you'll pick up language concepts faster than alernative methods. As soon as you
+                have a handle on the material, you can compete on the world stage by earning points with peers.</p>
+        </div>
+    </section>
+    <footer> Made by <a href="http://linkedin.com/in/evantobin">Evan Tobin</a> for <a
+            href="http://www.omscs.gatech.edu/">Georgia Tech's OMSCS Program</a></footer>
     <script>
         var editor = document.getElementById('mIDE');
         editor.onload = function () {

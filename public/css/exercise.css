@@ -14,3 +14,9 @@ iframe {
     width: 100%;
     max-height: 60vh;
 }
+#userInfo {
+    color:#fff;
+}
+#userInfo a:hover {
+    color: #ddd;
+}

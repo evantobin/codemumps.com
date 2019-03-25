@@ -20,6 +20,7 @@ section {
     background-image: url("../img/nurse.png");
     background-repeat: no-repeat;
     background-size: 20vw auto;
+    min-height: 600px;
 }
 
 #exercises li {

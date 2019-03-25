@@ -33,3 +33,17 @@ section a:hover {
 section {
     padding-bottom:2vh;
 }
+
+section>h1 {
+    padding: 0px 0px 1vh 0px;
+}
+
+#errorMessage {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-transform: uppercase;
+    text-align: center;
+    color: #b30f0f;
+    background: #f3b2b2;
+    margin: 2vh 0px;
+}

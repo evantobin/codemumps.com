@@ -3,6 +3,8 @@ header {
     background-position: right top;
     background-repeat: no-repeat;
     background-size: 60vw auto;
+    background-color: white;
+    height: 30vw;
 }
 header .content {
     padding: 5vh 0px;
@@ -21,4 +23,33 @@ iframe {
 
 section>h1 {
     text-align: center;
+}
+
+.pbl {
+    background-image: url(../img/pbl.jpg);
+    background-position-x: 20vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #2981C2;
+    color: #fff;
+    text-align: left;
+    padding: 10vh;
+}
+
+.pbl h1 {
+    text-align: left;
+}
+
+.pbl > div {
+    width: 25vw;
+    margin-right: 20vw;
+}
+
+#userInfo {
+    background-color:var(--navy);
+    padding:10px;
+    color: #fff;
+}
+#userInfo a:hover {
+    color: #ddd;
 }

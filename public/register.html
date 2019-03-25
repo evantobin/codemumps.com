@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/user/register.js"></script>
 </head>
 
 <body>
@@ -17,25 +21,25 @@
     </header>
     <section id="window">
         <h1>Register</h1>
-        <form action="dashboard.html">
+        <form onsubmit="event.preventDefault(); register();">
             <div class="flexContainer">
                 <div style="margin-right:10px;flex:.5">
                     <label>first name</label>
-                    <input name="firstname">
+                    <input name="firstname" id="firstname">
                 </div>
                 <div style="margin-left:10px;flex:.5">
                     <label>last name</label>
-                    <input name="lastname">
+                    <input name="lastname" id="lastname">
                 </div>
             </div>
             <label>email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" id="email">
             <label>password</label>
-            <input type="password" name="password">
+            <input type="password" name="password" id="password">
             <label>confirm password</label>
-            <input type="password" name="password">
+            <input type="password" name="cpassword" id="cpassword">
             <label>country</label>
-            <select>
+            <select id="country">
                 <option value="AF">Afghanistan</option>
                 <option value="AX">Åland Islands</option>
                 <option value="AL">Albania</option>
@@ -287,7 +291,6 @@
                 <option value="ZW">Zimbabwe</option>
             </select>
             <input type="submit" value="register" class="navy">
-
         </form>
         <a href="login.html">Existing user? Login here</a>
     </section>

@@ -55,9 +55,11 @@ header {
 }
 
 a {
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
-  }
+    color: inherit;
+    /* blue colors for links too */
+    text-decoration: inherit;
+    /* no underline */
+}
 
 section {
     padding: 5vh;
@@ -129,6 +131,7 @@ form label {
 form input, form select {
     padding: 1vw;
     margin-bottom: 1.5vh;
+    font-size: 1.25em;
     width: 100%;
     border: 1px solid #a1a1a1;
 }
@@ -137,6 +140,41 @@ form input[type=submit] {
     background-color: var(--navy);
     color: #fff;
     text-transform: uppercase;
-    font-size: 1.25em;
     font-weight: 200;
+}
+
+.error label {
+    color: #b30f0f;
+}
+
+.error input {
+    border-color: #b30f0f;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    line-height: 7.5vh;
+    background: #17191f;
+    color: #fff;
+}
+
+#userInfo {
+    position: absolute;
+    color: #000;
+    right: 0px;
+    top: 0px;
+}
+
+#userInfo a {
+    padding: 0px 10px;
+    border-right: 1px solid #888;
+}
+
+#userInfo a:hover {
+    color: #444;
+}
+
+#userInfo a:last-child {
+    border: 0px;
 }
