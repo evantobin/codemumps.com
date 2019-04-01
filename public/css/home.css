@@ -2,9 +2,9 @@ header {
     background: url(../img/doc.png);
     background-position: right top;
     background-repeat: no-repeat;
-    background-size: 60vw auto;
+    background-size: contain;
     background-color: white;
-    height: 30vw;
+    min-height: 30vw;
 }
 header .content {
     padding: 5vh 0px;
@@ -28,7 +28,8 @@ section>h1 {
 .pbl {
     background-image: url(../img/pbl.jpg);
     background-position-x: 20vw;
-    background-size: contain;
+    background-position-y: center;
+    background-size: 30vw;
     background-repeat: no-repeat;
     background-color: #2981C2;
     color: #fff;
@@ -42,7 +43,7 @@ section>h1 {
 
 .pbl > div {
     width: 25vw;
-    margin-right: 20vw;
+    margin-right: 15vw;
 }
 
 #userInfo {
