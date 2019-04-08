@@ -1,6 +1,5 @@
 jsep.addBinaryOp("!");
-jsep.addBinaryOp("[");
-jsep.addBinaryOp("]");
+jsep.addBinaryOp("@");
 jsep.addBinaryOp("=");
 jsep.addBinaryOp("#");
 jsep.addBinaryOp("&");
@@ -138,6 +137,14 @@ m2js.processArray = function (array) {
                         result += command;
                     }
                     ifOnLine.push(i);
+                } else if (command.mRoutine == "e") {
+                    var command = "else{";
+                    if (shouldLeftOver) {
+                        leftOvers[functionCount].push(command);
+                    } else {
+                        result += command;
+                    }
+                    ifOnLine.push(i);
                 } else if (command.mRoutine == "d" && (command.mArguments == " " || command.mArguments == "")) {
                     shouldLeftOver = true;
                     dOnLine++;
@@ -215,6 +222,12 @@ m2js.conditionalChange = {
 
 
 m2js.handleConditional = function (args) {
+    if(args.includes("[")){
+        args = args.replaceAll("[","@");
+    }
+    if(args.includes("'=")){
+        args = args.replaceAll("'","!=");
+    }
     var args = jsep(args);
     function recurseCondition(array) {
         if (array.type == "CallExpression") {
@@ -235,6 +248,9 @@ m2js.handleConditional = function (args) {
             return m2js.splitMArgs(array.name);
         }
         array.operator = m2js.conditionalChange[array.operator] || array.operator;
+        if(array.operator == "@") {
+            return recurseCondition(array.left) +".includes(" + recurseCondition(array.right)+ ")";
+        }
         return recurseCondition(array.left) + array.operator + recurseCondition(array.right);
     }
     return recurseCondition(args);
@@ -286,7 +302,11 @@ m2js.processArgs = function (args) {
     }
     if (/%?[a-z]+[0-z]*/i.test(args) && args.indexOf("(") != -1) {
         var arrayName = "mvm.arrays." + args.split("(")[0];
-        return arrayName + "['" + args.substring(args.indexOf("(") + 1, args.lastIndexOf(")")).replace(/^"(.*)"$/, '$1') + "']";
+        var argument = args.substring(args.indexOf("(") + 1, args.lastIndexOf(")")).replace(/^"(.*)"$/, '$1');
+        if(isNaN(argument)){
+            return arrayName + "[" +argument + "]";
+        }
+        return arrayName + "['" + argument + "']";
     }
     if (args.startsWith("mvm.vars.")) {
         return args;
@@ -452,6 +472,21 @@ m2js.processCMD_w = function (args) {
     return "console.log(" + result.replace(/^,|,$/g, '') + ");";
 };
 
+m2js.processCMD_r = function (args) {
+    var result = "";
+    args = m2js.splitNoParen(args);
+    for (var i = 0; i < args.length; i++) {
+        var arg = m2js.splitMArgs(args[i]);
+        if(arg.startsWith("mvm")) {
+            // variable we should read
+            result += arg+"=prompt();";
+        } else {
+            result += "console.log("+arg+");";
+        }
+    }
+    return result;
+}
+
 String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     search = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -532,3 +567,16 @@ window.mumps.setE = function (variable, start, end, replace) {
     }
     return result;
 };
+window.mumps.F = function(message, substring, start) {
+    var location = 0;
+    if(start !== undefined) {
+        message = message.substring(start-1);
+        location += start-1;
+    }
+    location += message.indexOf(substring);
+    if(location === -1) {
+        return 0;
+    } else {
+        return location + substring.length + 1;
+    }
+}

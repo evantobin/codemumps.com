@@ -24,7 +24,7 @@ section {
 }
 
 #exercises li {
-    display: block;
+    display: inline-block;
     height: 100px;
     width: 200px;
     padding: 20px;

@@ -20,3 +20,17 @@ iframe {
 #userInfo a:hover {
     color: #ddd;
 }
+
+#exerciseComplete {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+#submitExercise {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #e4e4e4;
+}

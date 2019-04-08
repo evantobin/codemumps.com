@@ -19,7 +19,19 @@ db.collection("exercise").doc(window.exerciseID).get().then(function (doc) {
 var fireValidate = firebase.functions().httpsCallable('validateAnswer');
 
 function validateAnswer(text) {
-    fireValidate({ id: window.exerciseID, content: text }).then(function (result) {
-        console.log(result);
+    return fireValidate({ id: window.exerciseID, content: text });
+}
+
+function submitSolution() {
+    var iframe = $('#mIDE'); // or some other selector to get the iframe
+    iframe[0].contentWindow.runCode();
+    var text = $('#console', iframe.contents()).html();
+    validateAnswer(text).then(function(value) {
+        if(value.data===true) {
+            startConfetti();
+            alert("You've completed the exercise. Appropriate points have been added to your account.")
+        } else {
+            alert("That isn't quite it. Try again.")
+        }
     });
 }
