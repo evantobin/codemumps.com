@@ -13,7 +13,10 @@ firebase.auth().onAuthStateChanged(function (user) {
                 submitButton.remove();
             }
 
-            $("#titlebar").append('<div id="userInfo"><a href="dashboard.html">Dashboard</a><a>'+name+'</a><a>'+points+'pts</a><a>Ranked #1 in US</a><a onclick="signOut()">Sign Out</a></div>');
+            db.collection("users").where("points", ">", points).get().then((doc) =>{
+                $("#titlebar").append('<div id="userInfo"><a href="dashboard.html">Dashboard</a><a>'+name+'</a><a>'+points+'pts</a><a href="leaderboard.html">Ranked #'+(doc.size+1)+'</a><a onclick="signOut()">Sign Out</a></div>');
+            })
+            
         });
     }
 });

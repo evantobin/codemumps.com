@@ -1,0 +1,57 @@
+#leaders > li {
+    background-color: #5C5F6A;
+    color: #fff;
+    margin: 2vh 0px 0px 0px;
+}
+
+
+#leaders li .heading {
+    font-family: 'Playfair Display', serif;
+    padding: 2vh 1vw;
+    font-size: 2em;
+    display: flex;
+    background: var(--navy);
+}
+
+#leaders li .heading .name {
+    flex: 1;
+    text-align: center;
+}
+
+#leaders li .heading .points {
+    flex: .25;
+    text-align: right;
+}
+
+#leaders li .heading .number {
+    flex: .25;
+}
+
+#leaders li .addition {
+    padding: 2vh 2.5vw 2vh 2.5vw;
+    display: none;
+}
+
+#leaders li .addition h1 {
+    font-size: 1em;
+    padding: 0px 0px 2vh 0px;
+}
+
+#leaders li .addition ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#leaders li .addition ul li{
+    display: inline-block;
+    width: 25%;
+    padding-bottom: .5vh;
+    text-align: center;
+}
+
+section {
+    background-image: url("../img/magenta.png");
+    background-repeat: no-repeat;
+    background-size: 20vw auto;
+    min-height: 600px;
+}

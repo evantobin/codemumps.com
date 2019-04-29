@@ -178,3 +178,8 @@ footer {
 #userInfo a:last-child {
     border: 0px;
 }
+
+.mainSection {
+    width: 50%;
+    margin: auto;
+}

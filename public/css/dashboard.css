@@ -6,11 +6,6 @@ section {
     text-align: left;
 }
 
-#exerciseList {
-    width: 50%;
-    margin: auto;
-}
-
 #exerciseList>p {
     width: 60%;
     padding-bottom: 5vh;
