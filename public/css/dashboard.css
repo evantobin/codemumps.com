@@ -57,3 +57,8 @@ section {
 #exercises li:hover {
     filter: brightness(105%);
 }
+
+#exercises{
+    display: flex;
+    flex-wrap: wrap;
+}
